@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from rest_framework import response
+from rest_framework.response import Response
 from rest_framework.decorators import api_view
 
 # Create your views here.
@@ -12,4 +12,5 @@ def form_data(request):
     if request.method == "POST":
         username=request.data.get("username")
         password=request.data.get("password")
-        return response({"message":username})
+        print(username,password)
+        return Response({"message":username})

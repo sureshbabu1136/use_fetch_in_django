@@ -37,6 +37,7 @@
             password:document.getElementById("password").value,
         }
         console.log(data)
+        console.log(getCookie("csrftoken"))
         fetch("/form_data",{
             method:"POST",
             headers:{
@@ -47,7 +48,7 @@
         })
         .then(
             data=>{
-                console.log("success:",data)
+                console.log("success:",data.body)
             }
         )
     })
